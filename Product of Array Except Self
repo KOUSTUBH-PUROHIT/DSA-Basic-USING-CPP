@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "Enter the length of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    int leftProduct[n];
+    int rightProduct[n];
+
+    leftProduct[0] = 1;
+    for (int i = 1; i < n; i++)
+    {
+        leftProduct[i] = leftProduct[i - 1] * arr[i - 1];
+    }
+
+    rightProduct[n - 1] = 1;
+    for (int i = n - 2; i >= 0; i--)
+    {
+        rightProduct[i] = rightProduct[i + 1] * arr[i + 1];
+    }
+
+     int answer[n];
+    for (int i = 0; i < n; i++)
+    {
+        answer[i] = leftProduct[i] * rightProduct[i];
+    }
+
+    cout << "Resultant array elements are: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << answer[i] << " ";
+    }
+
+    return 0;
+}
