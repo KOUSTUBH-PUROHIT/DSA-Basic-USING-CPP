@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+bool func(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[i] == arr[j])
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+int main()
+{
+
+    int n;
+    cout << "Enter the length of array: ";
+    cin >> n;
+
+    int arr[n];
+
+    cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+
+    cout << "Array elements are: ";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+
+    if (func(arr, n))
+    {
+        cout << "\nDuplicate elements found in the array.\n";
+    }
+    else
+    {
+        cout << "\nAll elements are distinct.\n";
+    }
+
+    return 0;
+}
