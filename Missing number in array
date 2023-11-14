@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+    int n;
+    
+    cout<<"Enter the value of n :"<<endl;
+    cin>>n;
+    
+    int arr[n];
+    
+    for (int i = 0 ; i< n ; i++)
+    {
+        cout<<"Enter number : "<<endl;
+        cin>>arr[i];
+    }
+    
+    cout<<"The array is : "<<endl;
+    for(int i= 0  ; i < n ; i++)
+    {
+        cout<<arr[i]<< " ";
+    }
+    
+    int arr_sum = 0;
+    for (int i = 0; i< n ; i++)
+    {
+        arr_sum  = arr_sum + arr[i];
+    }
+    int actual_sum = 0;
+    for (int i = 1; i<= n ; ++i)
+    {
+        actual_sum  += i;
+    }
+    
+    cout<<endl;
+    cout<<"The missing number of array is : "<<actual_sum - arr_sum;
+       return 0;
+}
